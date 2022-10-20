@@ -100,7 +100,18 @@ namespace JogoDaVelha
         //Clicar na imagem 1x1
         public void Click1x1(object sender, MouseButtonEventArgs e)
         {
-            PreencheSimboloDaVezDoJogador(branco1x1);
+            if (simboloJogadorDaVez == "X")
+            {
+                //Trocar o jogador 1x1
+                branco1x1.Visibility = Visibility.Collapsed;
+                img1x1XBranco.Visibility = Visibility.Visible;
+            }
+            //Inverter o jogador
+            else
+            {
+                branco1x1.Visibility = Visibility.Collapsed;
+                imgO1x1.Visibility = Visibility.Visible;
+            }
         }
 
         //Clicar na imagem 1x2
@@ -160,21 +171,8 @@ namespace JogoDaVelha
                 //Verifico se o espaço está vazio
                 if (imagemSelecionada.IsVisible)
                 {
-                    //Apago o espaço em branco
-                    imagemSelecionada.Visibility = Visibility.Collapsed;
                     //Aparece o símbolo do jogador
-                    if (simboloJogadorDaVez == "X")
-                    {
-                        //Trocar o jogador 1x1
-                        branco1x1.Visibility = Visibility.Collapsed;
-                        img1x1XBranco.Visibility = Visibility.Visible;
-                    }
-                    //Inverter o jogador
-                    else
-                    {
-                        branco1x1.Visibility = Visibility.Collapsed;
-                        imgO1x1.Visibility = Visibility.Visible;
-                    }
+                    
                     //Computo uma jogada.
                     numerodeJogadas++;
 

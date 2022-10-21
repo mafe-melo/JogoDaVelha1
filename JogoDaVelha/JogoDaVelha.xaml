@@ -12,7 +12,7 @@
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="191*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle x:Name="fundoPlacar" HorizontalAlignment="Left" Height="38" Margin="-13,397,0,0" Stroke="#FF7DCCED" VerticalAlignment="Top" Width="472" Fill="#FF76C4ED" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="fundoPlacar" HorizontalAlignment="Left" Height="38" Margin="0,397,0,0" Stroke="#FF7DCCED" VerticalAlignment="Top" Width="459" Fill="#FF76C4ED" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="txtVencedor" HorizontalAlignment="Left" Margin="46,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="201" FontSize="24" Text="Jogador Vencedor:  " Grid.Column="1"/>
         <TextBlock x:Name="txtJogador" HorizontalAlignment="Left" Margin="28,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2"><Run Text="Jogador"/><LineBreak/></TextBlock>
         <TextBlock x:Name="txtVelha" HorizontalAlignment="Left" Margin="117,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.Column="1"><Run Text="Velha"/><LineBreak/></TextBlock>
@@ -24,7 +24,7 @@
         <TextBlock x:Name="txtCompNum" HorizontalAlignment="Left" Margin="279,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.Column="1"><Run Language="pt-br" Text="0"/><LineBreak/></TextBlock>
         <Image x:Name="img1x2" HorizontalAlignment="Left" Height="100" Margin="112,69,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 1.png" RenderTransformOrigin="0.844,0.203" Width="90" MouseLeftButtonDown="Click1x2" Visibility="Hidden" Grid.Column="1"/>
         <Image x:Name="img2x2XBranco" HorizontalAlignment="Left" Height="87" Margin="112,177,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Visibility="Hidden" Grid.Column="1"/>
-        <Image x:Name="img1x1XBranco" HorizontalAlignment="Left" Height="88" Margin="55,69,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Grid.ColumnSpan="2"/>
+        <Image x:Name="img1x1XBranco" HorizontalAlignment="Left" Height="88" Margin="55,69,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Grid.ColumnSpan="2" Visibility="Hidden"/>
         <Image x:Name="img1x3XBranco" HorizontalAlignment="Left" Height="87" Margin="244,69,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Visibility="Hidden" Grid.Column="1"/>
         <Image x:Name="img2x1XBranco" HorizontalAlignment="Left" Height="87" Margin="55,177,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Visibility="Hidden" Grid.ColumnSpan="2"/>
         <Image x:Name="img2x3XBranco" HorizontalAlignment="Left" Height="87" Margin="244,177,0,0" VerticalAlignment="Top" Source="/Jogo da Velha 4.png" RenderTransformOrigin="0.844,0.203" Width="90" Visibility="Hidden" Grid.Column="1"/>
@@ -73,8 +73,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <TextBlock x:Name="txtOGanha" HorizontalAlignment="Left" Margin="45,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="224" FontSize="24" Visibility="Hidden" Grid.Column="1"><Run Text="Jogador Vencedor: "/><Run Language="pt-br" Text="O"/><Run Text=" "/></TextBlock>
-        <Image x:Name="imgO1x1" Margin="58,73,308,389" Source="/Jogo da Velha 3.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image Margin="54,62,304,388" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click1x1" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgO1x1" Margin="58,73,308,389" Source="/Jogo da Velha 3.png" Stretch="Fill" Grid.ColumnSpan="2" Visibility="Hidden"/>
         <Image x:Name="imgO1x2" Margin="117,73,181,388" Source="/Jogo da Velha 3.png" Stretch="Fill" RenderTransformOrigin="0.536,0.29" Grid.Column="1" Visibility="Hidden"/>
         <Image x:Name="imgO1x3" Margin="247,73,51,388" Source="/Jogo da Velha 3.png" Stretch="Fill" Visibility="Hidden" Grid.Column="1"/>
         <Image x:Name="imgO2x1" Margin="58,179,308,283" Source="/Jogo da Velha 3.png" Stretch="Fill" Visibility="Hidden" Grid.ColumnSpan="2"/>
@@ -83,15 +82,15 @@
         <Image x:Name="imgO3x1" Margin="58,293,308,169" Source="/Jogo da Velha 3.png" Stretch="Fill" Visibility="Hidden" Grid.ColumnSpan="2"/>
         <Image x:Name="imgO3x2" Margin="117,293,181,169" Source="/Jogo da Velha 3.png" Stretch="Fill" Visibility="Hidden" Grid.Column="1"/>
         <Image x:Name="imgO3x3" Margin="247,293,51,169" Source="/Jogo da Velha 3.png" Stretch="Fill" Grid.Column="1" Visibility="Hidden"/>
-        <Image x:Name="branco1x1" Margin="54,62,304,388" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click1x1" Grid.ColumnSpan="2"/>
-        <Image x:Name="branco1x2" Margin="109,62,181,388" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click1x2" Grid.Column="1"/>
-        <Image x:Name="branco1x3" Margin="236,65,54,385" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click1x3" RenderTransformOrigin="0.506,0.127" Grid.Column="1"/>
-        <Image x:Name="branco2x1" Margin="54,169,304,280" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click2x1" RenderTransformOrigin="0.671,0.278" Grid.ColumnSpan="2"/>
-        <Image x:Name="branco2x2" Margin="112,169,178,281" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click2x2" Grid.Column="1"/>
-        <Image x:Name="branco2x3" Margin="236,169,54,281" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click2x3" Grid.Column="1"/>
-        <Image x:Name="branco3x1" Margin="54,281,304,169" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click3x1" Grid.ColumnSpan="2"/>
-        <Image x:Name="branco3x2" Margin="113,279,177,171" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click3x2" Grid.Column="1"/>
-        <Image x:Name="branco3x3" Margin="239,279,51,171" Source="/Jogo da Velha 5.png" Stretch="Fill" MouseLeftButtonDown="Click3x3" Grid.Column="1"/>
+        <Image x:Name="branco1x3" Margin="232,64,36,385" Source="/img3.png" Stretch="Fill" MouseLeftButtonDown="Click1x3" RenderTransformOrigin="0.506,0.127" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock x:Name="txtJogadorVencedor" HorizontalAlignment="Left" Margin="247,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Text="" Grid.Column="1"/>
+        <Image x:Name="branco1x1" HorizontalAlignment="Center" Height="100" Margin="-253,57,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2" Source="/imagem-invisivel.png" MouseLeftButtonDown="Click1x1"/>
+        <Image x:Name="branco1x2" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="-67,55,0,0" VerticalAlignment="Top" Width="124" Source="/img2.png" MouseLeftButtonDown="Click1x2"/>
+        <Image x:Name="branco2x1" HorizontalAlignment="Center" Height="88" Margin="-261,169,0,0" VerticalAlignment="Top" Width="109" Grid.ColumnSpan="2" Source="/img4.png" MouseLeftButtonDown="Click2x1"/>
+        <Image x:Name="branco2x2" Grid.Column="1" HorizontalAlignment="Center" Height="90" Margin="-70,168,0,0" VerticalAlignment="Top" Width="122" MouseLeftButtonDown="Click2x2" Source="/img5.png"/>
+        <Image x:Name="branco2x3" Grid.Column="1" HorizontalAlignment="Center" Height="91" Margin="185,168,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Click2x3" Source="/img6.png"/>
+        <Image x:Name="branco3x1" HorizontalAlignment="Left" Height="100" Margin="47,276,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2" MouseLeftButtonDown="Click3x1" Source="/img7.png"/>
+        <Image x:Name="branco3x2" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="-70,270,0,0" VerticalAlignment="Top" Width="126" MouseLeftButtonDown="Click3x2" Source="/img9.png"/>
+        <Image x:Name="branco3x3" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="234,272,48,0" VerticalAlignment="Top" Width="100" Source="/img8.png" MouseLeftButtonDown="Click3x3"/>
     </Grid>
 </Window>

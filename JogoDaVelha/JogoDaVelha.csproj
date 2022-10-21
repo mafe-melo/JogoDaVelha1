@@ -8,10 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="imagem-invisivel.png" />
+    <None Remove="img2.png" />
+    <None Remove="img3.png" />
+    <None Remove="img4.png" />
+    <None Remove="img5.png" />
+    <None Remove="img6.png" />
+    <None Remove="img7.png" />
+    <None Remove="img8.png" />
+    <None Remove="img9.png" />
     <None Remove="Jogo da Velha 4.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="imagem-invisivel.png" />
+    <Resource Include="img2.png" />
+    <Resource Include="img3.png" />
+    <Resource Include="img4.png" />
+    <Resource Include="img5.png" />
+    <Resource Include="img6.png" />
+    <Resource Include="img7.png" />
+    <Resource Include="img8.png" />
+    <Resource Include="img9.png" />
     <Resource Include="Jogo da Velha 4.png" />
   </ItemGroup>
 

@@ -21,28 +21,24 @@ namespace JogoDaVelha
     public partial class MainWindow : Window
     {
         //O jogador da vez.
-        bool simboloJogadorDaVez;
+       
         //Quem venceu.
         string jogadorVencedor = "";
 
-        
-        //Verde para o vencedor
-        SolidColorBrush corDaVitoria = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
-        //Vermelho para o perdedor/empate
-        SolidColorBrush corDaVelha = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-
-        //criar as crescentes para resultado
+        //criar a crescentes para resultado
         int numerodeJogadas = 0;
-        int velha = 0;
+       
         int jogadorGanha = 0;
         int computadorGanha = 0;
+        bool xGanha = false;
+        bool oGanha = false;
 
         public MainWindow()
         {
             InitializeComponent();
             //Deixa vazio o campo vencedor
             txtJogadorVencedor.Text = "";
-            }
+        }
 
         public void SimbolosEscondidos()
         {
@@ -75,56 +71,26 @@ namespace JogoDaVelha
             SimbolosEscondidos();
             //Três segundos devem ser aguardados até começar outro jogo
             txtJogadorVencedor.Text = "";
-            
+
         }
 
-
-        //public void TrocarJogadorDaVez()
-        //{
-        //Verifico qual o jogador atual
-        //if (simboloJogadorDaVez == "X")
-        //{
-        //Trocar o jogador
-        //simboloJogadorDaVez = "O";
-        // }
-        //Inverter o jogador
-        // else
-        //{
-        //simboloJogadorDaVez = "X";
-        //}
-
-        //}
-
-        //Para ganhar
-        private void Ataque()
-        {   switch (simboloJogadorDaVez)
-            {
-                case:
-                    imgO1x1.Visibility = Visibility.Hidden;
-                    numerodeJogadas++;
-                    simboloJogadorDaVez = false;
-                    checagemVencedor();
-                    break;
-
-            }
-            
-        }
-
-        //Para impedir o adversário de vencer
-        public void Defesa()
+        //Jogador da vez
+       public bool simboloJogadorDaVez()
         {
-
+            if (imgO1x1.Visibility == Visibility.Visible || imgO1x2.Visibility == Visibility.Visible || imgO1x3.Visibility == Visibility.Visible
+                || imgO2x1.Visibility == Visibility.Visible || imgO2x2.Visibility == Visibility.Visible || imgO2x3.Visibility == Visibility.Visible 
+                || imgO3x1.Visibility == Visibility.Visible || imgO3x2.Visibility == Visibility.Visible || imgO3x3.Visibility == Visibility.Visible)
+                return true;
+            else
+            {
+                return false;
+            }
         }
 
         //Jogada aleatória
         public void Aleatorio()
         {
             bool looping = false;
-
-            if (simboloJogadorDaVez == true)
-            {
-                looping = true;
-            }
 
             while (looping != false)
             {
@@ -134,209 +100,247 @@ namespace JogoDaVelha
                 switch (randomizar)
                 {
                     case 1:
-                        if (button1.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button1.Text = "O";
+                            imgO1x1.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
-                            looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 2:
-                        if (button2.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button2.Text = "O";
+                            imgO1x2.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
+  
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 3:
-                        if (button3.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button3.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 4:
-                        if (button4.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button4.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 5:
-                        if (button5.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button5.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 6:
-                        if (button6.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button6.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 7:
-                        if (button7.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button7.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 8:
-                        if (button8.Text == "" && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button8.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            simboloJogadorDaVez = false;
                             looping = false;
                             checagemVencedor();
                         }
                         break;
                     case 9:
-                        if ( && simboloJogadorDaVez == true)
+                        if (simboloJogadorDaVez() == true)
                         {
-                            button9.Text = "O";
+                            imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
                             looping = false;
-                            simboloJogadorDaVez = false;
-                            checagemVencedor();
+                           checagemVencedor();
                         }
                         break;
                 }
             }
         }
 
-        // Ver quem venceu
-        public void checagemVencedor()
-        {
-            if (simboloJogadorDaVez == true)
-            {
-                Ataque();
-            }
-        }
-
+ 
         //Clicar na imagem 1x1
-        public void Click1x1(object sender, MouseButtonEventArgs e)
+        public bool Click1x1(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
-                branco1x1.Visibility = Visibility.Hidden;
+                //branco1x1.Visibility = Visibility.Hidden;
                 img1x1XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
             }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
         //Clicar na imagem 1x2
-        public void Click1x2(object sender, MouseButtonEventArgs e)
+        public bool Click1x2(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
                 branco1x2.Visibility = Visibility.Hidden;
                 img1x2XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
             }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
 
         //Clicar na imagem 1x3
-        public void Click1x3(object sender, MouseButtonEventArgs e)
+        public bool Click1x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
                 branco1x3.Visibility = Visibility.Hidden;
                 img1x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
             }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
         //Clicar na imagem 2x1
-        public void Click2x1(object sender, MouseButtonEventArgs e)
+        public bool Click2x1(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
                 branco2x1.Visibility = Visibility.Hidden;
                 img2x1XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
             }
+            else
+            {
+                Aleatorio();               
+            }
+            return true;
         }
 
         //Clicar na imagem 2x2
-        public void Click2x2(object sender, MouseButtonEventArgs e)
+        public bool Click2x2(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
                 branco2x2.Visibility = Visibility.Hidden;
                 img2x2XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
             }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
         //Clicar na imagem 2x3
-        public void Click2x3(object sender, MouseButtonEventArgs e)
+        public bool Click2x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez == false)
+            if (simboloJogadorDaVez() == false)
             {
                 branco2x3.Visibility = Visibility.Hidden;
                 img2x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
-                checagemVencedor();
+               checagemVencedor();
             }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
         //Clicar na imagem 3x1
-        public void Click3x1(object sender, MouseButtonEventArgs e)
+        public bool Click3x1(object sender, MouseButtonEventArgs e)
         {
-            branco3x1.Visibility = Visibility.Hidden;
-            img3x1XBranco.Visibility = Visibility.Visible;
-            numerodeJogadas++;
-            checagemVencedor();
+            if (simboloJogadorDaVez() == false)
+            {
+                branco3x1.Visibility = Visibility.Hidden;
+                img3x1XBranco.Visibility = Visibility.Visible;
+                numerodeJogadas++;
+                checagemVencedor();
+            }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
+
 
         //Clicar na imagem 3x2
-        public void Click3x2(object sender, MouseButtonEventArgs e)
+        public bool Click3x2(object sender, MouseButtonEventArgs e)
         {
-            branco3x2.Visibility = Visibility.Hidden;
-            img3x2XBranco.Visibility = Visibility.Visible;
-            numerodeJogadas++;
-            checagemVencedor();
+            if (simboloJogadorDaVez() == false)
+            {
+                branco3x2.Visibility = Visibility.Hidden;
+                img3x2XBranco.Visibility = Visibility.Visible;
+                numerodeJogadas++;
+                checagemVencedor();
+            }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
-
+          
         //Clicar na imagem 3x3
-        public void Click3x3(object sender, MouseButtonEventArgs e)
+            public bool Click3x3(object sender, MouseButtonEventArgs e)
         {
-            branco3x3.Visibility = Visibility.Hidden;
-            img3x3XBranco.Visibility = Visibility.Visible;
-            numerodeJogadas++;
-            checagemVencedor();
+            if (simboloJogadorDaVez() == false)
+            {
+                branco3x3.Visibility = Visibility.Hidden;
+                img3x3XBranco.Visibility = Visibility.Visible;
+                numerodeJogadas++;
+                checagemVencedor();
+            }
+            else
+            {
+                Aleatorio();
+            }
+            return true;
         }
 
-        public void VerificaVencedor()
+        public void checagemVencedor()
         {
             // Verifico se a coluna esquerda houve vencedor
             if (img1x1XBranco.Visibility == Visibility.Visible && img2x1XBranco.Visibility == Visibility.Visible && img3x1XBranco.Visibility == Visibility.Visible
@@ -345,55 +349,56 @@ namespace JogoDaVelha
                 //Chama o método para pintar os botões
 
                 // Atribuo o jogador da vez a variavel que informa o vencedor
-               
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
 
             // Verifico se a coluna do meio houve vencedor
             else if (img1x2XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img3x2XBranco.Visibility == Visibility.Visible
                 || imgO1x2.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO3x2.Visibility == Visibility.Visible)
             {
-
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a coluna direita houve vencedor
             else if (img1x3XBranco.Visibility == Visibility.Visible && img2x3XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible
                 || imgO1x3.Visibility == Visibility.Visible && imgO2x3.Visibility == Visibility.Visible && imgO3x3.Visibility == Visibility.Visible)
             {
 
-                
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a linha superior houve vencedor
             else if (img1x1XBranco.Visibility == Visibility.Visible && img1x2XBranco.Visibility == Visibility.Visible && img1x3XBranco.Visibility == Visibility.Visible
                 || imgO1x1.Visibility == Visibility.Visible && imgO1x2.Visibility == Visibility.Visible && imgO1x3.Visibility == Visibility.Visible)
             {
 
-                
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a linha do meio houve vencedor
             else if (img2x1XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img2x3XBranco.Visibility == Visibility.Visible
                 || imgO2x1.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO2x3.Visibility == Visibility.Visible)
             {
 
-                
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a linha inferior houve vencedor
             else if (img3x1XBranco.Visibility == Visibility.Visible && img3x2XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible
                 || imgO3x1.Visibility == Visibility.Visible && imgO3x2.Visibility == Visibility.Visible && imgO3x3.Visibility == Visibility.Visible)
             {
 
-                
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a diagonal esquerda houve vencedor
             else if (img1x1XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible
                 || imgO1x1.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO3x3.Visibility == Visibility.Visible)
             {
 
-                
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Verifico se a diagonal direita houve vencedor
             else if (img1x3XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img3x1XBranco.Visibility == Visibility.Visible
                 || imgO1x3.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO3x1.Visibility == Visibility.Visible)
             {
-                
+
+                txtJogadorVencedor.Text = "Fim de jogo";
             }
             // Se não houver vencedor, será velha.
             else
@@ -405,7 +410,7 @@ namespace JogoDaVelha
             //Informo se houve vencedor
         }
 
-            private void TelaEmBranco()
+        private void TelaEmBranco()
         {
             //Reinicia tudo
             branco1x1.Visibility = Visibility.Visible;
@@ -424,13 +429,9 @@ namespace JogoDaVelha
             // Verifico se todos os botões foram jogados
             if (numerodeJogadas == 9)
             {
-                // Chama o método para pintar os botões que resultou em velha
-   
                 // Informo no campo que houve velha
-                txtVencedor.Visibility = Visibility.Collapsed;
                 txtJogadorVencedor.Text = "Deu velha!";
             }
         }
-
     }
 }

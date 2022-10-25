@@ -91,5 +91,7 @@
         <Image x:Name="branco3x2" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="-70,270,0,0" VerticalAlignment="Top" Width="126" MouseLeftButtonDown="Click3x2" Source="/img9.png"/>
         <Image x:Name="branco3x3" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="234,272,48,0" VerticalAlignment="Top" Width="100" Source="/img8.png" MouseLeftButtonDown="Click3x3"/>
         <Image x:Name="branco1x1" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="-317,57,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Click1x1" Source="/imagem-invisivel.png"/>
+        <TextBlock x:Name="txtVelhaNum" HorizontalAlignment="Center" Margin="-22,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2" Text="0"/>
+        <TextBlock x:Name="txtCumpNum" HorizontalAlignment="Center" Margin="256,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2"><Run Language="pt-br" Text="0"/><LineBreak/></TextBlock>
     </Grid>
 </Window>

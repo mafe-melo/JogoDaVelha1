@@ -17,6 +17,7 @@
     <None Remove="img7.png" />
     <None Remove="img8.png" />
     <None Remove="img9.png" />
+    <None Remove="Jogo da Velha 3.png" />
     <None Remove="Jogo da Velha 4.png" />
   </ItemGroup>
 
@@ -30,6 +31,7 @@
     <Resource Include="img7.png" />
     <Resource Include="img8.png" />
     <Resource Include="img9.png" />
+    <Resource Include="Jogo da Velha 3.png" />
     <Resource Include="Jogo da Velha 4.png" />
   </ItemGroup>
 

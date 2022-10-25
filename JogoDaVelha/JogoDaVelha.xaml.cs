@@ -20,8 +20,9 @@ namespace JogoDaVelha
     /// </summary>
     public partial class MainWindow : Window
     {
-       
-        //Quem venceu.
+
+        //Vez
+        bool jogadorDaVez;
 
         //criar a crescentes para resultado
         int numerodeJogadas = 0;
@@ -37,6 +38,7 @@ namespace JogoDaVelha
         
         public void IniciarNovoJogo(object sender, RoutedEventArgs e)
         {
+            jogadorDaVez = true;
             TelaEmBranco();
             SimbolosEscondidos();
             //Três segundos devem ser aguardados até começar outro jogo
@@ -45,48 +47,211 @@ namespace JogoDaVelha
         }
 
         //Jogador da vez
-       public bool simboloJogadorDaVez()
+
+        //O no 1x1
+        public bool OA1()
         {
-            if (img1x1XBranco.Visibility == Visibility.Visible || img1x2XBranco.Visibility == Visibility.Visible || img1x3XBranco.Visibility == Visibility.Visible
-                || img2x1XBranco.Visibility == Visibility.Visible || img2x2XBranco.Visibility == Visibility.Visible || img2x3XBranco.Visibility == Visibility.Visible 
-                || img3x1XBranco.Visibility == Visibility.Visible || img3x2XBranco.Visibility == Visibility.Visible || img3x3XBranco.Visibility == Visibility.Visible)
-                return true;
-            else
+            if (imgO1x1.Visibility != Visibility.Visible)
             {
-                return false;   
+                return false;
             }
-                  
+            return true;
         }
 
-        
+        //O no 1x2
+        public bool OA2()
+        {
+            if (imgO1x2.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 1x3
+        public bool OA3()
+        {
+            if (imgO1x3.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 2x1
+        public bool OB1()
+        {
+            if (imgO2x1.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 2x2
+        public bool OB2()
+        {
+            if (imgO2x2.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 2x3
+        public bool OB3()
+        {
+            if (imgO2x3.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 3x1
+        public bool OC1()
+        {
+            if (imgO3x1.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 3x2
+        public bool OC2()
+        {
+            if (imgO3x2.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //O no 3x3
+        public bool OC3()
+        {
+            if (imgO3x3.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+        //---------------------------------------------------------------------------------
+        //X no 1x1
+        public bool XA1()
+        {
+            if (img1x1XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }           
+            return true;
+        }
+
+        //X no 1x2
+        public bool XA2()
+        {
+            if (img1x2XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 1x3
+        public bool XA3()
+        {
+            if (img1x3XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 2x1
+        public bool XB1()
+        {
+            if (img2x1XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 2x2
+        public bool XB2()
+        {
+            if (img2x2XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 2X3
+        public bool XB3()
+        {
+            if (img2x3XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 3x1
+        public bool XC1()
+        {
+            if (img3x1XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 3x2
+        public bool XC2()
+        {
+            if (img3x2XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //X no 3x3
+        public bool XC3()
+        {
+            if (img3x3XBranco.Visibility != Visibility.Visible)
+            {
+                return false;
+            }
+            return true;
+        }
+
+//---------------------------------------------------------------------------------
+
         //Clicar na imagem 1x1
         public void Click1x1(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (OA1() == false)
             {
-                //branco1x1.Visibility = Visibility.Hidden;
+                branco1x1.Visibility = Visibility.Hidden;
                 img1x1XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();            }
+                JogadaComputador();            }
         }
 
         //Clicar na imagem 1x2
         public void Click1x2(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (OA2() == false)
             {
                 branco1x2.Visibility = Visibility.Hidden;
                 img1x2XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                JogadaComputador();
             }
         }
 
@@ -94,80 +259,65 @@ namespace JogoDaVelha
         //Clicar na imagem 1x3
         public void Click1x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() != false)
+            if (jogadorDaVez == true && OA3() != false)
             {
                 branco1x3.Visibility = Visibility.Hidden;
                 img1x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
-                checagemVencedor();              
-            }
-            else
-            {
-                Aleatorio();
+                checagemVencedor(); 
+                JogadaComputador();
             }
         }
 
         //Clicar na imagem 2x1
         public void Click2x1(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OB1() == false)
             {
                 branco2x1.Visibility = Visibility.Hidden;
                 img2x1XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();               
+                JogadaComputador();               
             }
         }
 
         //Clicar na imagem 2x2
         public void Click2x2(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OB2() == false)
             {
                 branco2x2.Visibility = Visibility.Hidden;
                 img2x2XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                JogadaComputador();
             }
         }
 
         //Clicar na imagem 2x3
         public void Click2x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OB3() == false)
             {
                 branco2x3.Visibility = Visibility.Hidden;
                 img2x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
-               checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                checagemVencedor();
+                JogadaComputador();
             }
         }
 
         //Clicar na imagem 3x1
         public void Click3x1(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OC1() == false)
             {
                 branco3x1.Visibility = Visibility.Hidden;
                 img3x1XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                JogadaComputador();
             }
         }
 
@@ -175,130 +325,127 @@ namespace JogoDaVelha
         //Clicar na imagem 3x2
         public void Click3x2(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OC2() == false)
             {
                 branco3x2.Visibility = Visibility.Hidden;
                 img3x2XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                JogadaComputador();
             }
         }
-          
+
         //Clicar na imagem 3x3
-            public void Click3x3(object sender, MouseButtonEventArgs e)
+        public void Click3x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (jogadorDaVez == true && OC3() == false)
             {
                 branco3x3.Visibility = Visibility.Hidden;
                 img3x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
                 checagemVencedor();
-            }
-            else
-            {
-                Aleatorio();
+                JogadaComputador();
             }
         }
 
-        //Jogada aleatória
-        public void Aleatorio()
+        //Jogada do computador
+        public void JogadaComputador()
         {
-            bool looping = false;
+            bool computadorJogando = true;
 
-            while (looping != false)
+            while (computadorJogando == true)
             {
-                Random rdn = new Random();
-                int randomizar = rdn.Next(1, 9);
+                Random jogadaO = new Random();
+                int computadorJoga = jogadaO.Next(1, 9);
 
-                switch (randomizar)
+                switch (computadorJoga)
                 {
                     case 1:
-                        if (simboloJogadorDaVez() == true)
+                        if (XA1() == false)
                         {
                             imgO1x1.Visibility = Visibility.Visible;
                             numerodeJogadas++;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 2:
-                        if (simboloJogadorDaVez() == true)
+                        if (XA2() == false)
                         {
                             imgO1x2.Visibility = Visibility.Visible;
                             numerodeJogadas++;
 
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 3:
-                        if (simboloJogadorDaVez() == true)
+                        if (XA3() == true && jogadorDaVez == false)
                         {
                             imgO1x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 4:
-                        if (simboloJogadorDaVez() == true)
+                        if (XB1() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO2x1.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 5:
-                        if (simboloJogadorDaVez() == true)
+                        if (XB2() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO2x2.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 6:
-                        if (simboloJogadorDaVez() == true)
+                        if (XB3() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO2x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 7:
-                        if (simboloJogadorDaVez() == true)
+                        if (XC1() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO3x1.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 8:
-                        if (simboloJogadorDaVez() == true)
+                        if (XC2() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO3x2.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                     case 9:
-                        if (simboloJogadorDaVez() == true)
+                        if (XC3() == true && jogadorDaVez == false)
                         {
-                            imgO1x3.Visibility = Visibility.Visible;
+                            imgO3x3.Visibility = Visibility.Visible;
                             numerodeJogadas++;
-                            looping = false;
+                            computadorJogando = false;
                             checagemVencedor();
                         }
                         break;
                 }
+                break;
             }
+      
         }
 
 
@@ -391,7 +538,7 @@ namespace JogoDaVelha
                 txtJogadorVencedor.Text = "Vitória do O!";
             }
 
-            //----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
             // Verifico se a linha inferior houve vencedor X
             else if (img3x1XBranco.Visibility == Visibility.Visible && img3x2XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible)
             {
@@ -450,7 +597,7 @@ namespace JogoDaVelha
             //Informo se houve vencedor
         }
 
-        private void TelaEmBranco()
+        public void TelaEmBranco()
         {
             //Reinicia tudo
             branco1x1.Visibility = Visibility.Visible;
@@ -487,17 +634,17 @@ namespace JogoDaVelha
             imgO3x3.Visibility = Visibility.Hidden;
         }
 
-        private void AumentaVitoriasJogador()
+        public void AumentaVitoriasJogador()
         {
             txtJogadorNum.Text = $"{(VitoriasJogador)}";
         }
 
-        private void AumentaVitoriasComputador()
+        public void AumentaVitoriasComputador()
         {
             txtJogadorNum.Text = $"{(VitoriasComputador)}";
         }
 
-        private void InformaVelha()
+        public void InformaVelha()
         {
             // Verifico se todos os botões foram jogados
             if (numerodeJogadas == 9)

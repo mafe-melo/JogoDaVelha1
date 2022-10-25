@@ -22,14 +22,11 @@ namespace JogoDaVelha
     {
        
         //Quem venceu.
-        string jogadorVencedor = "";
 
         //criar a crescentes para resultado
         int numerodeJogadas = 0;
         int VitoriasJogador = 0;
         int VitoriasComputador = 0;
-        int jogadorGanha = 0;
-        int computadorGanha = 0;
 
         public MainWindow()
         {
@@ -97,12 +94,12 @@ namespace JogoDaVelha
         //Clicar na imagem 1x3
         public void Click1x3(object sender, MouseButtonEventArgs e)
         {
-            if (simboloJogadorDaVez() == false)
+            if (simboloJogadorDaVez() != false)
             {
                 branco1x3.Visibility = Visibility.Hidden;
                 img1x3XBranco.Visibility = Visibility.Visible;
                 numerodeJogadas++;
-                checagemVencedor();
+                checagemVencedor();              
             }
             else
             {

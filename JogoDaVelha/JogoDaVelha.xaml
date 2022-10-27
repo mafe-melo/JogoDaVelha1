@@ -92,6 +92,6 @@
         <TextBlock x:Name="txtVelhaNum" HorizontalAlignment="Center" Margin="-22,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2" Text="0"/>
         <TextBlock x:Name="txtCumpNum" HorizontalAlignment="Center" Margin="256,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2"><Run Language="pt-br" Text="0"/><LineBreak/></TextBlock>
         <Image x:Name="branco1x3" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="207,55,0,0" VerticalAlignment="Top" Width="124" MouseLeftButtonDown="Click1x3" Source="/img3.png"/>
-        <TextBlock x:Name="txtJogadorVencedor" Grid.Column="1" HorizontalAlignment="Center" Margin="-81,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="32" FontWeight="Bold"/>
+        <TextBlock x:Name="txtJogadorVencedor" Grid.Column="1" HorizontalAlignment="Left" Margin="13,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="32" FontWeight="Bold"/>
     </Grid>
 </Window>

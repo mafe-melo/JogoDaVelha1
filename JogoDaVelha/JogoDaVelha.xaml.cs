@@ -486,7 +486,7 @@ namespace JogoDaVelha
       
         }
 
-
+// Checa quem venceu e atualiza o txt
         public void checagemVencedor()
         {
             // Verifico se a coluna esquerda houve vencedor X

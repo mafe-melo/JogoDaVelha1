@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,10 @@ namespace JogoDaVelha
     /// </summary>
     public partial class MainWindow : Window
     {
+    
+        Task tasks;
+        CancellationToken cancellationToken;
+        CancellationTokenSource tokenSorce;
 
         //criar a crescentes para resultado
         int numerodeJogadas = 0;
@@ -486,7 +491,7 @@ namespace JogoDaVelha
       
         }
 
-// Checa quem venceu e atualiza o txt
+        // Checa quem venceu e atualiza o txt
         public void checagemVencedor()
         {
             // Verifico se a coluna esquerda houve vencedor X
@@ -498,10 +503,10 @@ namespace JogoDaVelha
                 txtJogadorVencedor.Text = "Vitória do X!";
                 AumentaVitoriasJogador();
                 VitoriasJogador++;
+                IniciaContagem();
             }
 
             // Verifico se a coluna esquerda houve vencedor O
-            
             else if (imgO1x1.Visibility == Visibility.Visible && imgO2x1.Visibility == Visibility.Visible && imgO3x1.Visibility == Visibility.Visible)
             {
                 //Chama o método para pintar as imagens
@@ -510,9 +515,9 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 VitoriasComputador++;
                 txtJogadorVencedor.Text = "Vitória do O!";
-
+                IniciaContagem();
             }
-//----------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------
             // Verifico se a coluna do meio houve vencedor X
             else if (img1x2XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img3x2XBranco.Visibility == Visibility.Visible)
             {
@@ -520,6 +525,7 @@ namespace JogoDaVelha
                 txtJogadorVencedor.Text = "Vitória do X!";
                 AumentaVitoriasJogador();
                 TelaEmBranco();
+                IniciaContagem();
             }
             // Verifico se a coluna do meio houve vencedor O
             else if (imgO1x2.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO3x2.Visibility == Visibility.Visible)
@@ -528,9 +534,10 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
-            
-//----------------------------------------------------------------------------------------------------
+
+            //----------------------------------------------------------------------------------------------------
             // Verifico se a coluna direita houve vencedor X
             else if (img1x3XBranco.Visibility == Visibility.Visible && img2x3XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible)
             {
@@ -538,6 +545,7 @@ namespace JogoDaVelha
                 txtJogadorVencedor.Text = "Vitória do X!";
                 AumentaVitoriasJogador();
                 TelaEmBranco();
+                IniciaContagem();
             }
             // Verifico se a coluna direita houve vencedor O
             else if (imgO1x3.Visibility == Visibility.Visible && imgO2x3.Visibility == Visibility.Visible && imgO3x3.Visibility == Visibility.Visible)
@@ -546,6 +554,7 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
             //----------------------------------------------------------------------------------------------------
@@ -556,6 +565,7 @@ namespace JogoDaVelha
                 AumentaVitoriasJogador();
                 txtJogadorVencedor.Text = "Vitória do X!";
                 TelaEmBranco();
+                IniciaContagem();
             }
             // Verifico se a linha superior houve vencedor O
             else if (imgO1x1.Visibility == Visibility.Visible && imgO1x2.Visibility == Visibility.Visible && imgO1x3.Visibility == Visibility.Visible)
@@ -564,9 +574,10 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
-//----------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------
             // Verifico se a linha do meio houve vencedor X
             else if (img2x1XBranco.Visibility == Visibility.Visible && img2x2XBranco.Visibility == Visibility.Visible && img2x3XBranco.Visibility == Visibility.Visible)
             {
@@ -574,6 +585,7 @@ namespace JogoDaVelha
                 AumentaVitoriasJogador();
                 txtJogadorVencedor.Text = "Vitória do X!";
                 TelaEmBranco();
+                IniciaContagem();
             }
             // Verifico se a linha do meio houve vencedor O
             else if (imgO2x1.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO2x3.Visibility == Visibility.Visible)
@@ -582,9 +594,10 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
-//----------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------
             // Verifico se a linha inferior houve vencedor X
             else if (img3x1XBranco.Visibility == Visibility.Visible && img3x2XBranco.Visibility == Visibility.Visible && img3x3XBranco.Visibility == Visibility.Visible)
             {
@@ -592,6 +605,7 @@ namespace JogoDaVelha
                 AumentaVitoriasJogador();
                 txtJogadorVencedor.Text = "Vitória do X!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
             // Verifico se a linha inferior houve vencedor O
@@ -601,6 +615,7 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
             //----------------------------------------------------------------------------------------------------
             // Verifico se a diagonal esquerda houve vencedor X
@@ -610,6 +625,7 @@ namespace JogoDaVelha
                 AumentaVitoriasJogador();
                 txtJogadorVencedor.Text = "Vitória do X!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
             // Verifico se a diagonal esquerda houve vencedor O
@@ -619,6 +635,7 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
             //----------------------------------------------------------------------------------------------------
             // Verifico se a diagonal direita houve vencedor X
@@ -628,6 +645,7 @@ namespace JogoDaVelha
                 AumentaVitoriasJogador();
                 txtJogadorVencedor.Text = "Vitória do X!";
                 TelaEmBranco();
+                IniciaContagem();
             }
             // Verifico se a diagonal direita houve vencedor O
             else if (imgO1x3.Visibility == Visibility.Visible && imgO2x2.Visibility == Visibility.Visible && imgO3x1.Visibility == Visibility.Visible)
@@ -636,6 +654,7 @@ namespace JogoDaVelha
                 AumentaVitoriasComputador();
                 txtJogadorVencedor.Text = "Vitória do O!";
                 TelaEmBranco();
+                IniciaContagem();
             }
 
             //----------------------------------------------------------------------------------------------------
@@ -647,7 +666,7 @@ namespace JogoDaVelha
                 TelaEmBranco();
             }
 
-            //Informo se houve vencedor
+                //Informo se houve vencedor
         }
 
         public void TelaEmBranco()
@@ -676,12 +695,40 @@ namespace JogoDaVelha
 
         public void InformaVelha()
         {
-            // Verifico se todos os botões foram jogados
-            if (numerodeJogadas == 9)
+            
+            if (numerodeJogadas > 9)
             {
-                // Informo no campo que houve velha
+                // Informo que houve velha
                 txtJogadorVencedor.Text = "Deu velha!";
             }
         }
+
+   private void IniciaContagem()
+        {
+            //Cria o objeto para o token na tarefa
+            tokenSorce = new CancellationTokenSource();
+            cancellationToken = tokenSorce.Token;
+            tasks = IniciaTimer(tokenSorce.Token);
+        }
+
+        //Tarefa iniciada (tipo um delay)
+        private async Task IniciaTimer(CancellationToken token)
+        {
+            iniciouContagem = true;
+            //Loop para fazer a contagem do tempo
+            while (true)
+            {
+                //Verificar se a tarefa foi cancelada
+                cancellationToken.ThrowIfCancellationRequested();
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                }
+
+                //Esperando 2 segundos para continuar
+                await Task.Delay(6000);
+            }
+        }
+        bool iniciouContagem = false;
     }
 }

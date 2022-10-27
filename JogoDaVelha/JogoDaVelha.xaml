@@ -90,7 +90,7 @@
         <Image x:Name="branco3x3" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="234,272,48,0" VerticalAlignment="Top" Width="100" Source="/img8.png" MouseLeftButtonDown="Click3x3"/>
         <Image x:Name="branco1x1" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="-317,57,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="Click1x1" Source="/imagem-invisivel.png"/>
         <TextBlock x:Name="txtVelhaNum" HorizontalAlignment="Center" Margin="-22,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2" Text="0"/>
-        <TextBlock x:Name="txtCumpNum" HorizontalAlignment="Center" Margin="256,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2"><Run Language="pt-br" Text="0"/><LineBreak/></TextBlock>
+        <TextBlock x:Name="txtCompNum" HorizontalAlignment="Center" Margin="256,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center" Height="29" Grid.ColumnSpan="2"><Run Language="pt-br" Text="0"/><LineBreak/></TextBlock>
         <Image x:Name="branco1x3" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="207,55,0,0" VerticalAlignment="Top" Width="124" MouseLeftButtonDown="Click1x3" Source="/img3.png"/>
         <TextBlock x:Name="txtJogadorVencedor" Grid.Column="1" HorizontalAlignment="Left" Margin="13,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="32" FontWeight="Bold" FontSize="24"/>
     </Grid>

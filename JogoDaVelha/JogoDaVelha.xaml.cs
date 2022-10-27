@@ -690,14 +690,14 @@ namespace JogoDaVelha
 
         public void AumentaVitoriasComputador()
         {
-            txtJogadorNum.Text = $"{(VitoriasComputador)}";
+            txtCompNum.Text = $"{(VitoriasComputador)}";
         }
 
         public void InformaVelha()
         {
             
-            if (numerodeJogadas > 9)
-            {
+            if (numerodeJogadas > 10)
+            {s
                 // Informo que houve velha
                 txtJogadorVencedor.Text = "Deu velha!";
             }
